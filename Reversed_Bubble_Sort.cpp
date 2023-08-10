@@ -6,21 +6,21 @@ int main()
 	int size = sizeof(arr) / sizeof(arr[0]);
 	bool swapped = false;
 
-	std::cout << "Массив: ";
+	std::cout << "До сортировки:";
 
 	for (int i = 0; i < size; i++)
 	{
 		std::cout << arr[i] << " ";
 	}
+
 	std::cout << std::endl;
 
-    // сортируем
 	do
 	{
 		swapped = false;
 		for (int i = 1; i < size; i++)
 		{
-			if (arr[i - 1] > arr[i])
+			if (arr[i - 1] < arr[i])
 			{
 				int temp = arr[i - 1];
 				arr[i - 1] = arr[i];
@@ -30,15 +30,12 @@ int main()
 		}
 	} while (swapped);
 
-    // выводим 1-й
-	std::cout << "Минимальный элемент: ";
-	std::cout << arr[0];
-	
-	std::cout << "\n";
-	
-	// выводим последний
-	std::cout << "Максимальный элемент: ";
-	std::cout << arr[size - 1];
+	std::cout << "После сортировки:";
 
-	return 0;
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << " ";
+	}
+
+	std::cout << std::endl;
 } 
